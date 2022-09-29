@@ -14,6 +14,6 @@ public class Instance {
     private String insId;
 
     @ManyToOne
-    @JoinColumn(name = "fkEmpId")
+    @JoinColumn(name = "fkTeamId")
     private Team team;
 }

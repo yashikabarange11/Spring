@@ -27,4 +27,7 @@ public class UsageController {
     public List<Usage> getUsage(@PathVariable(required = false)Long id){
         return usageService.getUsageDetails(id);
     }
+
+
+
 }

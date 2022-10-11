@@ -10,5 +10,4 @@ public interface UsageService {
 
     List<Usage>getUsageDetails(Long id);
 
-
 }

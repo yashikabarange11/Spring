@@ -1,13 +1,14 @@
 package com.example.springboothibernate.entity;
 
 
-import com.example.springboothibernate.dto.UsageDto;
+
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+
 
 @Entity
 @Data
@@ -21,13 +22,11 @@ public class Usage {
     private String reason;
 
     @CreationTimestamp
-    private Long createdOn;
+    private LocalDateTime createdOn;
 
     @UpdateTimestamp
-    private Long updatedOn;
+    private LocalDateTime updatedOn;
 
-    @Transient
-    private String createdOnHuman;
 
     @ManyToOne
     @JoinColumn(name = "fkInstanceId")
@@ -37,9 +36,5 @@ public class Usage {
     @JoinColumn(name = "fkuserId")
     private Member member;
 
-    public UsageDto usageDto(){
-        UsageDto usage = new UsageDto();
-        usage.setId(this.id);
-        return usage;
-    }
+
 }
